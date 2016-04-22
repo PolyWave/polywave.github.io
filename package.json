@@ -11,5 +11,9 @@
     "url": "git@gitlab.univ-nantes.fr:polywave/website.git"
   },
   "author": "",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.1"
+  }
 }
