@@ -45,8 +45,7 @@
             .pipe(scsslint({
                 config: '.sass-lint.yml',
                 endless: true
-            }))
-            .pipe(scsslint.failReporter());
+            }));
     });
 
     gulp.task('sass:watch', () => {
