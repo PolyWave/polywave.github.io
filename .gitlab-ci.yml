@@ -1,12 +1,13 @@
 build_image:
-    script:
-        - docker build -t polywave-CI .
+  script:
+    - docker build -t polywave-CI .
 
 before_script:
-    - docker info
+  - docker info
 
 lint:
-    script:
-        - gulp check
+  script:
+    - gulp check
+
 tags:
-    - docker
+  - docker
