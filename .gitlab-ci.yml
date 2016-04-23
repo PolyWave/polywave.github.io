@@ -1,9 +1,10 @@
-build_image:
-  script:
-    - docker build -t polywave-CI -f Dockerfile ./Dockerfile
+image : monostream/nodejs-gulp-bower
 
 before_script:
-  - docker info
+    - apt-get update > /dev/null && apt-get install -y ruby_full > /dev/null
+    - gem install scss_lint > /dev/null
+    - npm install > /dev/null
+    - bower install > /dev/null
 
 lint:
   script:
