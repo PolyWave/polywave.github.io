@@ -1,4 +1,4 @@
-image: jamesgroat/node-bower-gulp-tsd
+image: monostream/nodejs-gulp-bower
 
 before_script:
   - npm install
