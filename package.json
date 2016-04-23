@@ -14,7 +14,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-html5-lint": "^1.1.0",
+    "gulp-htmlhint": "^0.3.1",
     "gulp-jshint": "^2.0.0",
     "gulp-sass": "^2.3.1",
     "gulp-scss-lint": "^0.3.9",

@@ -7,7 +7,7 @@
         stylish     = require('jshint-stylish'),
         sourcemaps  = require('gulp-sourcemaps'),
         scsslint    = require('gulp-scss-lint'),
-        html5Lint   = require('gulp-html5-lint');
+        htmlhint    = require('gulp-htmlhint');
 
     let paths = {
         sass: {
@@ -59,7 +59,13 @@
 
     gulp.task('html:lint', function() {
         return gulp.src(paths.html.src)
-            .pipe(html5Lint());
+            .pipe(htmlhint())
+            .pipe(htmlhint.reporter())
+            .pipe(htmlhint.failReporter({ suppress: true }));
+    });
+
+    gulp.task('html:watch', () => {
+        gulp.watch(paths.html.src, ['html:lint']);
     });
 
     /**
@@ -79,6 +85,6 @@
 
     gulp.task('check', ['sass:lint', 'html:lint', 'js:lint']);
     gulp.task('build', ['check', 'sass']);
-    gulp.task('default', ['build', 'sass:watch', 'js:watch']);
+    gulp.task('default', ['build', 'sass:watch', 'js:watch', 'html:watch']);
 
 }());
