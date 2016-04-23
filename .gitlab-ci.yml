@@ -1,0 +1,9 @@
+image: jamesgroat/node-bower-gulp-tsd
+
+lint:
+  script:
+    - npm install
+    - bower install
+    - gulp check
+  tags:
+    - docker
