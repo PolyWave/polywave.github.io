@@ -4,12 +4,18 @@
     let gulp        = require('gulp'),
         sass        = require('gulp-sass'),
         jshint      = require('gulp-jshint'),
-        stylish     = require('jshint-stylish');
+        stylish     = require('jshint-stylish'),
+        sourcemaps  = require('gulp-sourcemaps'),
+        scsslint    = require('gulp-scss-lint');
 
     let paths = {
         sass: {
             src  : `./styles/sass/**/*.scss`,
-            dest : `./styles/css`
+            dest : `./styles/css`,
+            includePaths: [
+                'bower_components/base/src/scss/', //include BASE framework
+                'styles/scss'
+            ]
         },
         lint: {
             src : `./gulpfile.js`
@@ -22,12 +28,25 @@
 
     gulp.task('sass', () => {
         return gulp.src(paths.sass.src)
-            .pipe(sass().on('error', sass.logError))
+            .pipe(sourcemaps.init())
+            .pipe(sass({
+                includePaths: paths.sass.includePaths
+            }).on('error', sass.logError))
+            .pipe(sourcemaps.write())
             .pipe(gulp.dest(paths.sass.dest));
     });
 
+    gulp.task('sass:lint', () => {
+        return gulp.src(paths.sass.src)
+            .pipe(scsslint({
+                config: '.sass-lint.yml',
+                endless: true
+            }))
+            .pipe(scsslint.failReporter());
+    });
+
     gulp.task('sass:watch', () => {
-        gulp.watch(paths.sass.src, ['sass']);
+        gulp.watch(paths.sass.src, ['sass:lint', 'sass']);
     });
 
     /**
