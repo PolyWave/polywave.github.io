@@ -11,7 +11,7 @@
 
     let paths = {
         sass: {
-            src  : `./styles/sass/**/*.scss`,
+            src  : `./styles/sass/style.scss`,
             dest : `./styles/css`,
             includePaths: [
                 'bower_components/base/src/scss/', //include BASE framework
