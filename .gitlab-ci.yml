@@ -7,12 +7,18 @@ variables:
 cache:
   untracked: true
   paths:
-    - bower_components/
-    - node_modules/
+      - node_modules/
+      - bower_components/
+    key: "frontend"
 
 lint:
   script:
     - npm install &>/dev/null
     - bower install &>/dev/null
     - gulp check
+  artifacts:
+    paths:
+      - node_modules/
+      - bower_components/
+    untracked: true
 
