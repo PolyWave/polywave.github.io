@@ -6,7 +6,8 @@
         jshint      = require('gulp-jshint'),
         stylish     = require('jshint-stylish'),
         sourcemaps  = require('gulp-sourcemaps'),
-        scsslint    = require('gulp-scss-lint');
+        scsslint    = require('gulp-scss-lint'),
+        html5Lint   = require('gulp-html5-lint');
 
     let paths = {
         sass: {
@@ -17,8 +18,11 @@
                 'styles/scss'
             ]
         },
-        lint: {
+        js: {
             src : `./gulpfile.js`
+        },
+        html: {
+            src : './partials/**/*.html'
         }
     };
 
@@ -50,21 +54,30 @@
     });
 
     /**
+     * HTML5
+     */
+
+    gulp.task('html:lint', function() {
+        return gulp.src(paths.html.src)
+            .pipe(html5Lint());
+    });
+
+    /**
      * jshint
      */
 
     gulp.task('js:lint', function() {
-        return gulp.src(paths.lint.src)
+        return gulp.src(paths.js.src)
             .pipe(jshint())
             .pipe(jshint.reporter(stylish))
             .pipe(jshint.reporter('fail'));
     });
 
     gulp.task('js:watch', () => {
-        gulp.watch(paths.lint.src, ['js:lint']);
+        gulp.watch(paths.js.src, ['js:lint']);
     });
 
-    gulp.task('check', ['sass:lint', 'js:lint']);
+    gulp.task('check', ['sass:lint', 'html:lint', 'js:lint']);
     gulp.task('build', ['check', 'sass']);
     gulp.task('default', ['build', 'sass:watch', 'js:watch']);
 
