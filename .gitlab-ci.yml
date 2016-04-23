@@ -7,6 +7,10 @@ variables:
 stages:
   - test
 
+before_script:
+  - npm install &>/dev/null
+  - bower install &>/dev/null
+
 lint:
   cache:
     untracked: true
@@ -15,7 +19,5 @@ lint:
       - bower_components/
     key: "dependencies"
   script:
-    - npm install &>/dev/null
-    - bower install &>/dev/null
     - gulp check
   stage: test
