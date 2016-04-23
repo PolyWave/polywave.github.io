@@ -7,9 +7,8 @@ variables:
 cache:
   untracked: true
   paths:
-      - node_modules/
-      - bower_components/
-    key: "frontend"
+    - node_modules/
+    - bower_components/
 
 lint:
   script:
