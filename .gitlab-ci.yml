@@ -7,14 +7,13 @@ variables:
 stages:
   - test
 
-cache:
-  untracked: true
-  paths:
-    - node_modules/
-    - bower_components/
-  key: "$CI_BUILD_REF_NAME"
-
 lint:
+  cache:
+    untracked: true
+    paths:
+      - node_modules/
+      - bower_components/
+    key: "dependencies"
   script:
     - npm install &>/dev/null
     - bower install &>/dev/null
