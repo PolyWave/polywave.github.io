@@ -6,6 +6,9 @@ before_script:
 
 cache:
   untracked: true
+  paths:
+    - bower_components/
+    - node_modules/
 
 lint:
   script:
