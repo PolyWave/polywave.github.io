@@ -1,10 +1,11 @@
-image : monostream/nodejs-gulp-bower
+image : guillaumewuip/node-gulp-bower-ruby
 
 before_script:
-    - apt-get update > /dev/null && apt-get install -y ruby_full > /dev/null
-    - gem install scss_lint > /dev/null
-    - npm install > /dev/null
-    - bower install > /dev/null
+  - npm install > /dev/null
+  - bower install > /dev/null
+
+cache:
+  untracked: true
 
 lint:
   script:
