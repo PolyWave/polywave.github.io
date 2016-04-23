@@ -1,6 +1,6 @@
 build_image:
   script:
-    - docker build -t polywave-CI .
+    - docker build -t polywave-CI -f Dockerfile ./Dockerfile
 
 before_script:
   - docker info
