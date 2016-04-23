@@ -1,8 +1,8 @@
 image : guillaumewuip/node-gulp-bower-ruby
 
 before_script:
-  - npm install > /dev/null
-  - bower install > /dev/null
+  - npm install &>/dev/null
+  - bower install &>/dev/null
 
 cache:
   untracked: true
