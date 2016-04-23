@@ -4,20 +4,14 @@ variables:
   http_proxy : "http://proxy-serveur.univ-nantes.prive:3128"
   https_proxy: "http://proxy-serveur.univ-nantes.prive:3128"
 
-cache:
-  untracked: true
-  paths:
-    - node_modules/
-    - bower_components/
-
 lint:
+  cache:
+    untracked: true
+    paths:
+      - node_modules/
+      - bower_components/
   script:
     - npm install &>/dev/null
     - bower install &>/dev/null
     - gulp check
-  artifacts:
-    paths:
-      - node_modules/
-      - bower_components/
-    untracked: true
 
