@@ -7,22 +7,26 @@
         stylish     = require('jshint-stylish'),
         sourcemaps  = require('gulp-sourcemaps'),
         scsslint    = require('gulp-scss-lint'),
-        htmlhint    = require('gulp-htmlhint');
+        htmlhint    = require('gulp-htmlhint'),
+        browserSync = require('browser-sync').create({
+                        });
 
     let paths = {
         sass: {
             src  : `./styles/sass/style.scss`,
+            watch: `./styles/sass/**/*.scss`,
             dest : `./styles/css`,
             includePaths: [
                 'bower_components/base/src/scss/', //include BASE framework
-                'styles/scss'
+                'styles/sass/'
             ]
         },
         js: {
             src : `./gulpfile.js`
         },
         html: {
-            src : './partials/**/*.html'
+            src  : './partials/**/*.html',
+            index: './partials/index.html'
         }
     };
 
@@ -37,7 +41,8 @@
                 includePaths: paths.sass.includePaths
             }).on('error', sass.logError))
             .pipe(sourcemaps.write())
-            .pipe(gulp.dest(paths.sass.dest));
+            .pipe(gulp.dest(paths.sass.dest))
+            .pipe(browserSync.reload({ stream: true }));
     });
 
     gulp.task('sass:lint', () => {
@@ -49,18 +54,19 @@
     });
 
     gulp.task('sass:watch', () => {
-        gulp.watch(paths.sass.src, ['sass:lint', 'sass']);
+        gulp.watch(paths.sass.watch, ['sass:lint', 'sass']);
     });
 
     /**
      * HTML5
      */
 
-    gulp.task('html:lint', function() {
+    gulp.task('html:lint', () => {
         return gulp.src(paths.html.src)
             .pipe(htmlhint())
             .pipe(htmlhint.reporter())
-            .pipe(htmlhint.failReporter({ suppress: true }));
+            .pipe(htmlhint.failReporter({ suppress: true }))
+            .pipe(browserSync.reload({ stream: true }));
     });
 
     gulp.task('html:watch', () => {
@@ -71,19 +77,31 @@
      * jshint
      */
 
-    gulp.task('js:lint', function() {
+    gulp.task('js:lint', () => {
         return gulp.src(paths.js.src)
             .pipe(jshint())
             .pipe(jshint.reporter(stylish))
-            .pipe(jshint.reporter('fail'));
+            .pipe(jshint.reporter('fail'))
+            .pipe(browserSync.reload({ stream: true }));
     });
 
     gulp.task('js:watch', () => {
         gulp.watch(paths.js.src, ['js:lint']);
     });
 
+    gulp.task('browserSync', function() {
+        browserSync.init({
+            server: {
+                baseDir: './'
+            },
+            notify: false
+        });
+    });
+
     gulp.task('check', ['sass:lint', 'html:lint', 'js:lint']);
     gulp.task('build', ['check', 'sass']);
-    gulp.task('default', ['build', 'sass:watch', 'js:watch', 'html:watch']);
-
+    gulp.task(
+        'default',
+        ['build', 'browserSync', 'sass:watch', 'js:watch', 'html:watch']
+    );
 }());

@@ -13,6 +13,7 @@
   "author": "",
   "license": "UNLICENSED",
   "devDependencies": {
+    "browser-sync": "^2.12.3",
     "gulp": "^3.9.1",
     "gulp-htmlhint": "^0.3.1",
     "gulp-jshint": "^2.0.0",
@@ -20,6 +21,7 @@
     "gulp-scss-lint": "^0.3.9",
     "gulp-sourcemaps": "^2.0.0-alpha",
     "jshint": "^2.9.2",
-    "jshint-stylish": "^2.1.0"
+    "jshint-stylish": "^2.1.0",
+    "livereload": "^0.4.1"
   }
 }
