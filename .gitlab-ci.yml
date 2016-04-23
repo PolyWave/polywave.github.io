@@ -1,11 +1,12 @@
-image: monostream/nodejs-gulp-bower
+build_image:
+    script:
+        - docker build -t polywave-CI .
 
 before_script:
-  - npm install
-  - bower install --allow-root
+    - docker info
 
 lint:
-  script:
-    - gulp check
-  tags:
+    script:
+        - gulp check
+tags:
     - docker
