@@ -1,9 +1,5 @@
 image : guillaumewuip/node-gulp-bower-ruby
 
-before_script:
-  - npm install &>/dev/null
-  - bower install &>/dev/null
-
 variables:
   http_proxy : "http://proxy-serveur.univ-nantes.prive:3128"
   https_proxy: "http://proxy-serveur.univ-nantes.prive:3128"
@@ -16,5 +12,7 @@ cache:
 
 lint:
   script:
+    - npm install &>/dev/null
+    - bower install &>/dev/null
     - gulp check
 
