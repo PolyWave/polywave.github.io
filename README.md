@@ -18,4 +18,11 @@ bower install
 gulp
 ```
 
+# CSS
+
+Le projet utilise [SASS](http://sass-lang.com/guide) comme préprocesseur CSS.
+
+On utilise le framework [BASE](http://getbase.org/) pour apporter quelques
+éléments de bases (grid, etc.). Il est directement incorporé au css final par
+SASS.
 
