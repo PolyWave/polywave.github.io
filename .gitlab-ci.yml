@@ -1,9 +1,11 @@
 image: jamesgroat/node-bower-gulp-tsd
 
-lint:
-  script:
+before-script:
     - npm install
-    - bower install
-    - gulp check
-  tags:
-    - docker
+    - bower install --allow-root
+
+lint:
+    script:
+        - gulp check
+    tags:
+        - docker
