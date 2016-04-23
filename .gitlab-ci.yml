@@ -1,6 +1,6 @@
 image: jamesgroat/node-bower-gulp-tsd
 
-before-script:
+before_script:
   - npm install
   - bower install --allow-root
 
