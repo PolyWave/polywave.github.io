@@ -53,19 +53,19 @@
      * jshint
      */
 
-    gulp.task('lint', function() {
+    gulp.task('js:lint', function() {
         return gulp.src(paths.lint.src)
             .pipe(jshint())
             .pipe(jshint.reporter(stylish))
             .pipe(jshint.reporter('fail'));
     });
 
-    gulp.task('lint:watch', () => {
-        gulp.watch(paths.lint.src, ['lint']);
+    gulp.task('js:watch', () => {
+        gulp.watch(paths.lint.src, ['js:lint']);
     });
 
-    gulp.task('check', ['lint']);
-    gulp.task('build', ['sass']);
-    gulp.task('default', ['check', 'build', 'sass:watch', 'lint:watch']);
+    gulp.task('check', ['sass:lint', 'js:lint']);
+    gulp.task('build', ['check', 'sass']);
+    gulp.task('default', ['build', 'sass:watch', 'js:watch']);
 
 }());
