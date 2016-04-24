@@ -1,0 +1,215 @@
+//---------------------------
+//   Custom flexbox grid
+//---------------------------
+
+$COLUMNS: 12;
+
+//@see https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+/**
+ * prefixr
+ *
+ * @param {string} prop
+ * @param {string|number|color} value
+ */
+@mixin prefixr($prop, $value) {
+    -webkit-#{$prop}: $value;
+    -moz-#{$prop}: $value;
+    -o-#{$prop}: $value;
+    -ms-#{$prop}: $value;
+    #{$prop}: $value;
+}
+
+/**
+ * element
+ *
+ * Defines css rules for an element :
+ *  - flex-grow
+ *  - flex-basis
+ *
+ * Defines max-width class.
+ *
+ * @param {number} flex     Flex-grow value
+ */
+@mixin element ($flex) {
+
+    @include prefixr(flex-grow, $flex);
+    @include prefixr(flex-basis, percentage($flex / $COLUMNS));
+
+    &.max {
+        max-width : percentage($flex / $COLUMNS);
+    }
+}
+
+.row {
+    display: flex;
+    @include prefixr(flex-direction, row);
+    @include prefixr(flex-wrap, wrap);
+    @include prefixr(justify-content, flex-start);
+    @include prefixr(align-items, flex-start);
+}
+.row_end {
+    @include prefixr(justify-content, flex-end);
+}
+.row_center {
+    @include prefixr(justify-content, flex-center);
+}
+.row_space {
+    @include prefixr(justify-content, flex-between);
+}
+
+.row-align_end {
+    @include prefixr(align-items, flex-end);
+}
+.row-align_center {
+    @include prefixr(align-items, center);
+}
+.row-align_stretch {
+    @include prefixr(align-items, stretch);
+}
+.row-align_baseline {
+    @include prefixr(align-items, baseline);
+}
+
+
+// Mobile Rows
+$i: 0;
+@while $i < 60 {
+    $i: $i + 5;
+    .row_top-#{$i} {
+        padding-top: $i * 1px;
+    }
+}
+
+$i: 0;
+@while $i < 60 {
+    $i: $i + 5;
+    .row_bottom-#{$i} {
+        padding-bottom: $i * 1px;
+    }
+}
+
+//Row content
+
+.row > * {
+    @include element(1); //default for all .row children
+}
+
+@for $i from 1 through $COLUMNS {
+    .col-#{$i} {
+        @include element($i);
+    }
+}
+
+//Push Offsets
+@for $i from 1 through $COLUMNS - 1 {
+    .push-#{$i} {
+        margin-left: percentage($i / $COLUMNS);
+    }
+}
+
+
+// Tablet Grid
+@media only screen and (min-width: $breakpoint-tablet) {
+
+    // Tablet Grid
+    $columns: 12;
+    @for $i from 1 through $columns {
+        .col-#{$i}-tablet {
+            @include element($i);
+        }
+    }
+
+    // Tablet Push Offsets
+    @for $i from 1 through $columns - 1 {
+        .push-#{$i}-tablet {
+            margin-left: percentage($i / $COLUMNS);
+        }
+    }
+
+    // Tablet Rows
+    $i: 0;
+    @while $i < 60 {
+        $i: $i + 5;
+        .row-top-#{$i}-tablet {
+            padding-top: $i * 1px;
+        }
+    }
+    $i: 0;
+    @while $i < 60 {
+        $i: $i + 5;
+        .row-bottom-#{$i}-tablet {
+            padding-bottom: $i * 1px;
+        }
+    }
+}
+
+// Desktop Grid
+@media only screen and (min-width: $breakpoint-desktop) {
+
+    // Desktop Grid
+    $columns: 12;
+    @for $i from 1 through $columns {
+        .col-#{$i}-desktop {
+            @include element($i);
+        }
+    }
+
+    // Desktop Push Offsets
+    @for $i from 1 through $columns - 1 {
+        .push-#{$i}-desktop {
+            margin-left: percentage($i / $COLUMNS);
+        }
+    }
+
+    // Desktop Rows
+    $i: 0;
+    @while $i < 60 {
+        $i: $i + 5;
+        .row-top-#{$i}-desktop {
+            padding-top: $i * 1px;
+        }
+    }
+    $i: 0;
+    @while $i < 60 {
+        $i: $i + 5;
+        .row-bottom-#{$i}-desktop {
+            padding-bottom: $i * 1px;
+        }
+    }
+}
+
+// HD Grid
+@media only screen and (min-width: $breakpoint-hd) {
+
+    // HD Grid
+    $columns: 12;
+    @for $i from 1 through $columns {
+        .col-#{$i}-hd {
+            @include element($i);
+        }
+    }
+
+    // HD Push Offsets
+    @for $i from 1 through $columns - 1 {
+        .push-#{$i}-hd {
+            margin-left: percentage($i / $COLUMNS);
+        }
+    }
+
+    // HD Rows
+    $i: 0;
+    @while $i < 60 {
+        $i: $i + 5;
+        .row-top-#{$i}-hd {
+            padding-top: $i * 1px;
+        }
+    }
+    $i: 0;
+    @while $i < 60 {
+        $i: $i + 5;
+        .row-bottom-#{$i}-hd {
+            padding-bottom: $i * 1px;
+        }
+    }
+}
