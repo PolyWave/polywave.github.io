@@ -29,8 +29,23 @@
     @import 'desktop-styles';
 }
 
+//--------------------------
+//  Override BASE styles
+//--------------------------
+
+.container-full {
+    width: 100%;
+}
+
 //-------------------
 //  Polywave styles
 //-------------------
 
-@import 'polywave';
+@import 'colors';
+@import 'fonts';
+
+@import 'components/logo';
+
+@import 'blocks/header';
+
+
