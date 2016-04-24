@@ -15,7 +15,7 @@ PolyWave Website
 ```
 npm install
 bower install
-gulp
+gulp //go to http://localhost:3000
 ```
 
 # CSS
