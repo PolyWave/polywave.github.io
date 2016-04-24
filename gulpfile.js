@@ -25,7 +25,7 @@
             src : `./gulpfile.js`
         },
         html: {
-            src  : './partials/**/*.html',
+            src  : ['./partials/**/*.html', './index.html'],
             index: './partials/index.html'
         }
     };
