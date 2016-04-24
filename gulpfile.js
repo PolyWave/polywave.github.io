@@ -104,7 +104,7 @@
         gulp.watch(paths.js.src, ['js:lint']);
     });
 
-    gulp.task('browserSync', function() {
+    gulp.task('browserSync',() => {
         browserSync.init({
             server: {
                 baseDir: './'
