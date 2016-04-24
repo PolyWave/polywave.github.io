@@ -8,8 +8,7 @@
         sourcemaps  = require('gulp-sourcemaps'),
         scsslint    = require('gulp-scss-lint'),
         htmlhint    = require('gulp-htmlhint'),
-        browserSync = require('browser-sync').create({
-                        });
+        browserSync = require('browser-sync').create();
 
     let paths = {
         sass: {
@@ -46,11 +45,16 @@
     });
 
     gulp.task('sass:lint', () => {
-        return gulp.src(paths.sass.src)
-            .pipe(scsslint({
-                config: '.sass-lint.yml',
-                endless: true
-            }));
+        let task = gulp.src(paths.sass.src).pipe(scsslint({
+            config: '.sass-lint.yml',
+            endless: true
+        }));
+
+        if (process.env.CI) {
+            task = task.pipe(scsslint.failReporter());
+        }
+
+        return task;
     });
 
     gulp.task('sass:watch', () => {
@@ -62,11 +66,17 @@
      */
 
     gulp.task('html:lint', () => {
-        return gulp.src(paths.html.src)
+        let task = gulp.src(paths.html.src)
             .pipe(htmlhint())
-            .pipe(htmlhint.reporter())
-            .pipe(htmlhint.failReporter({ suppress: true }))
-            .pipe(browserSync.reload({ stream: true }));
+            .pipe(htmlhint.reporter());
+
+        if (process.env.CI) {
+            task = task.pipe(htmlhint.failReporter({ suppress: true }));
+        }
+
+        task.pipe(browserSync.reload({ stream: true }));
+
+        return task;
     });
 
     gulp.task('html:watch', () => {
@@ -78,11 +88,16 @@
      */
 
     gulp.task('js:lint', () => {
-        return gulp.src(paths.js.src)
+        let task = gulp.src(paths.js.src)
             .pipe(jshint())
-            .pipe(jshint.reporter(stylish))
-            .pipe(jshint.reporter('fail'))
-            .pipe(browserSync.reload({ stream: true }));
+            .pipe(jshint.reporter(stylish));
+
+            if (process.env.CI) {
+                task = task.pipe(jshint.reporter('fail'));
+            }
+
+            task.pipe(browserSync.reload({ stream: true }));
+        return task;
     });
 
     gulp.task('js:watch', () => {
