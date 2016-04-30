@@ -45,9 +45,8 @@
     });
 
     gulp.task('sass:lint', () => {
-        let task = gulp.src(paths.sass.src).pipe(scsslint({
-            config: '.sass-lint.yml',
-            endless: true
+        let task = gulp.src(paths.sass.watch).pipe(scsslint({
+            config: '.sass-lint.yml'
         }));
 
         if (process.env.CI) {

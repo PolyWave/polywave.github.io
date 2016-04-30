@@ -31,7 +31,7 @@ linters:
     enabled: true
 
   ColorVariable:
-    enabled: true
+    enabled: false
 
   Comment:
     enabled: true
@@ -91,7 +91,7 @@ linters:
 
   Indentation:
     enabled: true
-    allow_non_nested_indentation: false
+    allow_non_nested_indentation: true
     character: space # or 'tab'
     width: 4
 
@@ -101,7 +101,7 @@ linters:
 
   MergeableSelector:
     enabled: true
-    force_nesting: true
+    force_nesting: false
 
   NameFormat:
     enabled: true
@@ -126,6 +126,7 @@ linters:
     max_properties: 10
 
   PropertySortOrder:
+    order: concentric
     enabled: true
     ignore_unspecified: false
     min_properties: 2
@@ -155,7 +156,7 @@ linters:
   QualifyingElement:
     enabled: true
     allow_element_with_attribute: false
-    allow_element_with_class: false
+    allow_element_with_class: true
     allow_element_with_id: false
 
   SelectorDepth:
@@ -163,8 +164,8 @@ linters:
     max_depth: 3
 
   SelectorFormat:
-    enabled: true
-    convention: hyphenated_lowercase # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    enabled: false
+    #convention: hyphenated_BEM # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
 
   Shorthand:
     enabled: true

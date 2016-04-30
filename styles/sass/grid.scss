@@ -2,16 +2,14 @@
 //   Custom flexbox grid
 //---------------------------
 
-$COLUMNS: 12;
+$columns: 12;
 
 //@see https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
-/**
- * prefixr
- *
- * @param {string} prop
- * @param {string|number|color} value
- */
+//prefixr
+//
+//@param {string} prop
+//@param {string|number|color} value
 @mixin prefixr($prop, $value) {
     -webkit-#{$prop}: $value;
     -moz-#{$prop}: $value;
@@ -20,54 +18,66 @@ $COLUMNS: 12;
     #{$prop}: $value;
 }
 
-/**
- * element
- *
- * Defines css rules for an element :
- *  - flex-grow
- *  - flex-basis
- *
- * Defines max-width class.
- *
- * @param {number} flex     Flex-grow value
- */
+//element
+//
+//Defines css rules for an element :
+//- flex-grow
+//- flex-basis
+//
+//Defines max-width class.
+//
+//@param {number} flex     Flex-grow value
 @mixin element ($flex) {
 
     @include prefixr(flex-grow, $flex);
-    @include prefixr(flex-basis, percentage($flex / $COLUMNS));
+    @include prefixr(flex-basis, percentage($flex / $columns));
 
     &.max {
-        max-width : percentage($flex / $COLUMNS);
+        max-width: percentage($flex / $columns);
     }
 }
 
+.container {
+    width: 100%;
+}
+
 .row {
-    display: flex;
     @include prefixr(flex-direction, row);
     @include prefixr(flex-wrap, wrap);
     @include prefixr(justify-content, flex-start);
     @include prefixr(align-items, flex-start);
+    display: flex;
+
+    > * {
+        @include element(1); //default for all .row children
+    }
 }
-.row_end {
+
+.row-end {
     @include prefixr(justify-content, flex-end);
 }
-.row_center {
+
+.row-center {
     @include prefixr(justify-content, flex-center);
 }
-.row_space {
+
+.row-space {
     @include prefixr(justify-content, flex-between);
 }
 
-.row-align_end {
+.row-align-end {
     @include prefixr(align-items, flex-end);
 }
-.row-align_center {
+
+.row-align-center {
     @include prefixr(align-items, center);
 }
-.row-align_stretch {
+
+.row-align-stretch {
     @include prefixr(align-items, stretch);
 }
-.row-align_baseline {
+
+.row-align-baseline {
     @include prefixr(align-items, baseline);
 }
 
@@ -76,7 +86,8 @@ $COLUMNS: 12;
 $i: 0;
 @while $i < 60 {
     $i: $i + 5;
-    .row_top-#{$i} {
+
+    .row-top-#{$i} {
         padding-top: $i * 1px;
     }
 }
@@ -84,27 +95,23 @@ $i: 0;
 $i: 0;
 @while $i < 60 {
     $i: $i + 5;
-    .row_bottom-#{$i} {
+
+    .row-bottom-#{$i} {
         padding-bottom: $i * 1px;
     }
 }
 
-//Row content
 
-.row > * {
-    @include element(1); //default for all .row children
-}
-
-@for $i from 1 through $COLUMNS {
+@for $i from 1 through $columns {
     .col-#{$i} {
         @include element($i);
     }
 }
 
 //Push Offsets
-@for $i from 1 through $COLUMNS - 1 {
+@for $i from 1 through $columns - 1 {
     .push-#{$i} {
-        margin-left: percentage($i / $COLUMNS);
+        margin-left: percentage($i / $columns);
     }
 }
 
@@ -123,7 +130,7 @@ $i: 0;
     // Tablet Push Offsets
     @for $i from 1 through $columns - 1 {
         .push-#{$i}-tablet {
-            margin-left: percentage($i / $COLUMNS);
+            margin-left: percentage($i / $columns);
         }
     }
 
@@ -131,6 +138,7 @@ $i: 0;
     $i: 0;
     @while $i < 60 {
         $i: $i + 5;
+
         .row-top-#{$i}-tablet {
             padding-top: $i * 1px;
         }
@@ -138,6 +146,7 @@ $i: 0;
     $i: 0;
     @while $i < 60 {
         $i: $i + 5;
+
         .row-bottom-#{$i}-tablet {
             padding-bottom: $i * 1px;
         }
@@ -158,7 +167,7 @@ $i: 0;
     // Desktop Push Offsets
     @for $i from 1 through $columns - 1 {
         .push-#{$i}-desktop {
-            margin-left: percentage($i / $COLUMNS);
+            margin-left: percentage($i / $columns);
         }
     }
 
@@ -166,6 +175,7 @@ $i: 0;
     $i: 0;
     @while $i < 60 {
         $i: $i + 5;
+
         .row-top-#{$i}-desktop {
             padding-top: $i * 1px;
         }
@@ -173,6 +183,7 @@ $i: 0;
     $i: 0;
     @while $i < 60 {
         $i: $i + 5;
+
         .row-bottom-#{$i}-desktop {
             padding-bottom: $i * 1px;
         }
@@ -193,7 +204,7 @@ $i: 0;
     // HD Push Offsets
     @for $i from 1 through $columns - 1 {
         .push-#{$i}-hd {
-            margin-left: percentage($i / $COLUMNS);
+            margin-left: percentage($i / $columns);
         }
     }
 
@@ -201,6 +212,7 @@ $i: 0;
     $i: 0;
     @while $i < 60 {
         $i: $i + 5;
+
         .row-top-#{$i}-hd {
             padding-top: $i * 1px;
         }
@@ -208,6 +220,7 @@ $i: 0;
     $i: 0;
     @while $i < 60 {
         $i: $i + 5;
+
         .row-bottom-#{$i}-hd {
             padding-bottom: $i * 1px;
         }
