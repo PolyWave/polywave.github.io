@@ -49,6 +49,9 @@ body,
     position: relative;
 }
 
+a {
+    font-size: inherit;
+}
 
 @import 'colors';
 @import 'fonts';
@@ -58,5 +61,6 @@ body,
 @import 'components/controls';
 
 @import 'blocks/header';
+@import 'blocks/footer';
 
 

@@ -37,8 +37,15 @@ $columns: 12;
     }
 }
 
-.container {
+.container,
+.container-full {
     width: 100%;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1140px;
 }
 
 .row {
