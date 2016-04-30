@@ -1,5 +1,16 @@
 
+$root-size: 14;
+
+// scss-lint:disable DuplicateProperty
+@mixin font-size ($size) {
+    $rem-value: $size / $root-size;
+    $px-value: ($size);
+    font-size: $px-value + px;
+    font-size: $rem-value + rem;
+}
+// scss-lint:enable DuplicateProperty
+
 * {
     font-family: "Roboto", "Arial", sans-serif;
-    font-size: 14px;
+    font-size: #{$root-size}px;
 }

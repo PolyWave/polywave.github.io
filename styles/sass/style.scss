@@ -36,10 +36,24 @@
 //-------------------
 
 @import 'utils/animations';
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+.pw-content {
+    position: relative;
+}
+
+
 @import 'colors';
 @import 'fonts';
 
 @import 'components/logo';
+@import 'components/slideshow';
 
 @import 'blocks/header';
 

@@ -1,0 +1,120 @@
+
+$nb-items: 5;      //number of items in slideshow
+
+@include keyframes('tmp-slideshow-anim') {
+    @for $i from 0 through ($nb-items - 1) {
+        #{percentage($i / $nb-items)},
+        #{percentage(($i + 1) / $nb-items - .03)} {
+            margin-left: percentage(-$i);
+        }
+    }
+}
+
+@include keyframes('tmp-slideshow-text') {
+
+    0%,
+    #{100 / $nb-items}% {
+        text-shadow: 0 0 2px $dark;
+        color: $white;
+    }
+
+    #{100 / $nb-items + 2}% {
+        text-shadow: none;
+        color: $white2;
+    }
+}
+
+.pw-slideshow {
+    background-color: $dark;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+    .pw-slideshow-wrapper {
+        @include animation('tmp-slideshow-anim #{6 * $nb-items}s  ease-in-out infinite');
+        margin: 0;
+        padding: 0;
+        width: $nb-items * 100%;
+        height: 100%;
+        text-align: left;
+        font-size: 0;
+    }
+
+        .pw-slideshow-item {
+            display: inline-block;
+            position: relative;
+            float: left;
+            width: percentage(1 / $nb-items);
+            height: 100%;
+        }
+
+            .pw-slideshow-item-elem {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .pw-slideshow-item-bck {
+                background-position: center center;
+                background-size: cover;
+            }
+
+            .pw-slideshow-item-overlay {
+                @include bg-rgba($dark, 30);
+                opacity: .3;
+                background-image: linear-gradient(to bottom right, #002f4b, #dc4225),
+                                  linear-gradient(to top, rgba(0, 0, 0, 0) 0%,
+                                    rgba(0, 0, 0, .65) 100%),
+                                  linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0%,
+                                    rgba(0, 0, 0, 1) 80%);
+            }
+
+        .pw-slideshow-texts {
+            position: absolute;
+            right: 2%;
+            bottom: 25%;
+            z-index: 20;
+            max-width: 40%;
+            color: $white2;
+        }
+
+        ul.pw-slideshow-texts {
+            padding: 0;
+            list-style: none;
+        }
+
+            .pw-slideshow-text {
+                @include animation('tmp-slideshow-text #{6 * $nb-items}s  ease-in-out infinite');
+                margin-bottom: .6em;
+            }
+
+            .pw-slideshow-text:hover,
+            .pw-slideshow-text:hover {
+                text-shadow: 0 0 2px $dark;
+                color: $white;
+            }
+
+            @for $i from 0 through ($nb-items - 1) {
+                .pw-slideshow-text:nth-child(#{$i}) {
+                    animation-delay: #{$i * 6}s;
+                }
+            }
+
+                .pw-slideshow-text-sub,
+                .pw-slideshow-text-title {
+                    display: block;
+                }
+
+                .pw-slideshow-text-sub {
+                    @include font-size(12);
+                }
+
+                .pw-slideshow-text-title {
+                    @include font-size(16);
+                }
+
