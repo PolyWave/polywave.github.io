@@ -119,4 +119,4 @@
         'default',
         ['build', 'browserSync', 'sass:watch', 'js:watch', 'html:watch']
     );
-}());
+})();
