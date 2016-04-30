@@ -36,7 +36,9 @@
                 display: inline-block;
             }
 
-            //.pw-header-nav-item {}
+            .pw-header-nav-item {
+                margin-right: 1em;
+            }
 
                 .pw-header-nav-item > a {
                     text-decoration: none;
