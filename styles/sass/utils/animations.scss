@@ -1,3 +1,4 @@
+// scss-lint:disable Indentation
 
 //from http://joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
 
@@ -13,9 +14,9 @@
         }
     }
     -webkit-animation: $animations;
-    -moz-animation: $animations;
-    -o-animation: $animations;
-    animation: $animations;
+       -moz-animation: $animations;
+         -o-animation: $animations;
+            animation: $animations;
 }
 
 @mixin keyframes($animation-name) {
@@ -32,3 +33,13 @@
         @content;
     }
 }
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+            transform: $transforms;
+}
+
+// scss-lint:enable Indentation

@@ -1,0 +1,75 @@
+
+.pw-controls {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16),
+                0 3px 6px rgba(0, 0, 0, .23);
+    background-color: $primary;
+
+    padding: 1em 2em;
+    width: 100%;
+
+}
+    //.pw-controls-button {}
+
+        .pw-controls-control {
+            cursor: pointer;
+        }
+
+        .pw-controls-play {
+            @include transform(rotate(90deg) scaleY(1.5));
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 16px 10px -17px rgba(0, 0, 0, .5);
+            width: 50px;
+            height: 26px;
+            overflow: hidden;
+        }
+
+        .pw-controls-play::after {
+            @include transform(rotate(45deg));
+            position: absolute;
+            top: 11px;
+            left: 0;
+            box-shadow: -1px -1px 10px -2px rgba(0, 0, 0, .5);
+            background: $white;
+            width: 50px;
+            height: 50px;
+            content: '';
+        }
+
+        .pw-controls-stop {
+            background-color: $white;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+            width: 40px;
+            height: 40px;
+        }
+
+    //.pw-controls-infos {}
+
+        .pw-controls-title {
+            @include font-size(14);
+            text-shadow: 0 0 2px $dark;
+            color: $white;
+        }
+
+        .pw-controls-bar {
+            position: relative;
+            background-color: rgba(255, 255, 255, .3);
+            width: 100%;
+        }
+
+            .pw-controls-bar,
+            .pw-controls-bar .pw-controls-bar-position {
+                height: 3px;
+            }
+
+            .pw-controls-bar .pw-controls-bar-position {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: $white;
+            }
