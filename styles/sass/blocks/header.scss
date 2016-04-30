@@ -1,6 +1,6 @@
 
 .pw-header {
-    padding: 1.2rem 0;
+    padding: 3em 0 1em;
     color: $white;
 }
 
@@ -20,7 +20,7 @@
 
     .pw-header-links {
         text-transform: uppercase;
-        text-shadow: 0 0 8px $dark;
+        text-shadow: 0 0 4px $dark;
     }
 
         //.pw-header-nav {}
@@ -34,6 +34,10 @@
             ul.pw-header-nav > li {
                 display: inline-block;
             }
+
+                ul.pw-header-nav > li > a:hover {
+                    text-decoration: underline;
+                }
 
             .pw-header-nav-item {
                 margin-right: 1em;
