@@ -115,6 +115,22 @@ $i: 0;
     }
 }
 
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
+}
+
 
 // Tablet Grid
 @media only screen and (min-width: $breakpoint-tablet) {
@@ -150,6 +166,22 @@ $i: 0;
         .row-bottom-#{$i}-tablet {
             padding-bottom: $i * 1px;
         }
+    }
+
+    .block-tablet {
+        display: block;
+    }
+
+    .inline-tablet {
+        display: inline;
+    }
+
+    .inline-block-tablet {
+        display: inline-block;
+    }
+
+    .hidden-tablet {
+        display: none;
     }
 }
 
@@ -188,6 +220,22 @@ $i: 0;
             padding-bottom: $i * 1px;
         }
     }
+
+    .block-desktop {
+        display: block;
+    }
+
+    .inline-desktop {
+        display: inline;
+    }
+
+    .inline-block-desktop {
+        display: inline-block;
+    }
+
+    .hidden-desktop {
+        display: none;
+    }
 }
 
 // HD Grid
@@ -224,5 +272,21 @@ $i: 0;
         .row-bottom-#{$i}-hd {
             padding-bottom: $i * 1px;
         }
+    }
+
+    .block-hd {
+        display: block;
+    }
+
+    .inline-hd {
+        display: inline;
+    }
+
+    .inline-block-hd {
+        display: inline-block;
+    }
+
+    .hidden-hd {
+        display: none;
     }
 }
