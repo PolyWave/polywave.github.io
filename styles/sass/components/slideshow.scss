@@ -91,6 +91,7 @@ $nb-items: 5;      //number of items in slideshow
             .pw-slideshow-text {
                 @include animation('tmp-slideshow-text #{6 * $nb-items}s  ease-in-out infinite');
                 margin-bottom: .6em;
+                cursor: pointer;
             }
 
             .pw-slideshow-text:hover,
