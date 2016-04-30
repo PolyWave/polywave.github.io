@@ -29,18 +29,13 @@
     @import 'desktop-styles';
 }
 
-//--------------------------
-//  Override BASE styles
-//--------------------------
-
-.container-full {
-    width: 100%;
-}
+@import 'base/animations';
 
 //-------------------
 //  Polywave styles
 //-------------------
 
+@import 'utils/animations';
 @import 'colors';
 @import 'fonts';
 
