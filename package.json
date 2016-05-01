@@ -16,7 +16,8 @@
   },
   "author": "",
   "license": "UNLICENSED",
-  "devDependencies": {
+  "dependencies": {
+    "express": "^4.13.4",
     "browser-sync": "^2.12.3",
     "gulp": "^3.9.1",
     "gulp-htmlhint": "^0.3.1",
@@ -27,8 +28,5 @@
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.1.0",
     "livereload": "^0.4.1"
-  },
-  "dependencies": {
-    "express": "^4.13.4"
   }
 }
