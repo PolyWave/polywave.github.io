@@ -42,11 +42,6 @@ $columns: 12;
     width: 100%;
 }
 
-.container {
-    margin-right: auto;
-    margin-left: auto;
-    width: 1140px;
-}
 
 .row {
     @include prefixr(flex-direction, row);
@@ -86,6 +81,18 @@ $columns: 12;
 
 .row-align-baseline {
     @include prefixr(align-items, baseline);
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
 
 
@@ -142,6 +149,47 @@ $i: 0;
 // Tablet Grid
 @media only screen and (min-width: $breakpoint-tablet) {
 
+    .row-end-tablet {
+        @include prefixr(justify-content, flex-end);
+    }
+
+    .row-center-tablet {
+        @include prefixr(justify-content, flex-center);
+    }
+
+    .row-space-tablet {
+        @include prefixr(justify-content, flex-between);
+    }
+
+    .row-align-end-tablet {
+        @include prefixr(align-items, flex-end);
+    }
+
+    .row-align-center-tablet {
+        @include prefixr(align-items, center);
+    }
+
+    .row-align-stretch-tablet {
+        @include prefixr(align-items, stretch);
+    }
+
+    .row-align-baseline-tablet {
+        @include prefixr(align-items, baseline);
+    }
+
+    .text-left-tablet {
+        text-align: left;
+    }
+
+    .text-center-tablet {
+        text-align: center;
+    }
+
+    .text-right-tablet {
+        text-align: right;
+    }
+
+
     // Tablet Grid
     $columns: 12;
     @for $i from 1 through $columns {
@@ -195,6 +243,46 @@ $i: 0;
 // Desktop Grid
 @media only screen and (min-width: $breakpoint-desktop) {
 
+    .row-end-desktop {
+        @include prefixr(justify-content, flex-end);
+    }
+
+    .row-center-desktop {
+        @include prefixr(justify-content, flex-center);
+    }
+
+    .row-space-desktop {
+        @include prefixr(justify-content, flex-between);
+    }
+
+    .row-align-end-desktop {
+        @include prefixr(align-items, flex-end);
+    }
+
+    .row-align-center-desktop {
+        @include prefixr(align-items, center);
+    }
+
+    .row-align-stretch-desktop {
+        @include prefixr(align-items, stretch);
+    }
+
+    .row-align-baseline-desktop {
+        @include prefixr(align-items, baseline);
+    }
+
+    .text-left-dekstop {
+        text-align: left;
+    }
+
+    .text-center-dekstop {
+        text-align: center;
+    }
+
+    .text-right-dekstop {
+        text-align: right;
+    }
+
     // Desktop Grid
     $columns: 12;
     @for $i from 1 through $columns {
@@ -243,10 +331,56 @@ $i: 0;
     .hidden-desktop {
         display: none;
     }
+
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        width: 1140px;
+    }
 }
 
 // HD Grid
 @media only screen and (min-width: $breakpoint-hd) {
+
+    .row-end-hd {
+        @include prefixr(justify-content, flex-end);
+    }
+
+    .row-center-hd {
+        @include prefixr(justify-content, flex-center);
+    }
+
+    .row-space-hd {
+        @include prefixr(justify-content, flex-between);
+    }
+
+    .row-align-end-hd {
+        @include prefixr(align-items, flex-end);
+    }
+
+    .row-align-center-hd {
+        @include prefixr(align-items, center);
+    }
+
+    .row-align-stretch-hd {
+        @include prefixr(align-items, stretch);
+    }
+
+    .row-align-baseline-hd {
+        @include prefixr(align-items, baseline);
+    }
+
+    .text-left-hd {
+        text-align: left;
+    }
+
+    .text-center-hd {
+        text-align: center;
+    }
+
+    .text-right-hd {
+        text-align: right;
+    }
 
     // HD Grid
     $columns: 12;
