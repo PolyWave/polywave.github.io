@@ -114,6 +114,7 @@
 
     gulp.task('check', ['sass:lint', 'html:lint', 'js:lint']);
     gulp.task('build', ['check', 'sass']);
+    gulp.task('build-heroku', ['html:lint', 'js:lint', 'sass']);
     gulp.task(
         'default',
         ['build', 'browserSync', 'sass:watch', 'js:watch', 'html:watch']
