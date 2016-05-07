@@ -48,8 +48,7 @@ body {
     height: 100%;
 }
 
-body,
-.pw-content {
+body {
     position: relative;
 }
 
@@ -57,12 +56,12 @@ a {
     font-size: inherit;
 }
 
-
 @import 'components/logo';
 @import 'components/slideshow';
 @import 'components/controls';
 
 @import 'blocks/header';
+@import 'blocks/content';
 @import 'blocks/footer';
 
 
