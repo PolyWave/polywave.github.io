@@ -56,6 +56,10 @@ a {
     font-size: inherit;
 }
 
+img {
+    max-width: 100%;
+}
+
 @import 'components/logo';
 @import 'components/slideshow';
 @import 'components/controls';
