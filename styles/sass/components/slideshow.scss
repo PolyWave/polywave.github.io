@@ -67,11 +67,21 @@ $nb-items: 5;      //number of items in slideshow
             .pw-slideshow-item-overlay {
                 @include bg-rgba($dark, 30);
                 opacity: .3;
-                background-image: linear-gradient(to bottom right, #002f4b, #dc4225),
-                                  linear-gradient(to top, rgba(0, 0, 0, 0) 0%,
-                                    rgba(0, 0, 0, .65) 100%),
-                                  linear-gradient(to bottom right, rgba(0, 0, 0, 0) 0%,
-                                    rgba(0, 0, 0, 1) 80%);
+                background-image: linear-gradient(
+                        to bottom right,
+                        rgb(0, 47, 75),
+                        rgb(220, 66, 37)
+                    ),
+                    linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0) 0%,
+                        rgba(0, 0, 0, .65) 100%
+                    ),
+                    linear-gradient(
+                        to bottom right,
+                        rgba(0, 0, 0, 0) 0%,
+                        rgba(0, 0, 0, 1) 80%
+                    );
             }
 
         .pw-slideshow-texts {
