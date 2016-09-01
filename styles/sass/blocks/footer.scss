@@ -1,0 +1,86 @@
+
+.pw-footer {
+    @include box-shadow('0 10px 15px -5px #{$black2} inset');
+    background-color: $dark;
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+
+    .pw-footer * {
+        color: $white3;
+        font-weight: 100;
+    }
+
+    .pw-footer a {
+        text-decoration: none;
+    }
+
+    .pw-footer a:hover {
+        text-decoration: underline;
+    }
+
+    .pw-footer-list {
+        padding: 0;
+        list-style: none;
+    }
+
+        .pw-footer-list > li {
+            margin-bottom: .8em;
+        }
+
+        .pw-footer-list > li:last-child {
+            margin-bottom: 0;
+        }
+
+            .pw-footer-list > li > a {
+                @include font-size(14);
+                line-height: 1.4em;
+            }
+
+        .pw-footer-list_social > li {
+            margin-bottom: 1.3em;
+            text-indent: 1em;
+            line-height: 3em;
+        }
+
+            .pw-footer-list_social > li > a,
+            .pw-footer-list_social > li > a:hover {
+                text-decoration: none;
+            }
+
+            .pw-footer-list_social > li > a:hover {
+                color: $white;
+            }
+
+        .pw-footer-list_social > li:last-child {
+            margin-bottom: 0;
+        }
+
+        .pw-footer-list_social > li i,
+        .pw-footer-list_social > li span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .pw-footer-list_social > li span {
+            @include font-size(16);
+        }
+
+    .pw-footer-follow {
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
+
+    .pw-footer-pw {
+        text-align: center;
+    }
+
+        .pw-footer-logo-poly {
+            margin-left: 1em;
+            width: 120px;
+        }
+
+        .pw-footer-punchline {
+            @include font-size(12);
+            margin-top: 2em;
+    }

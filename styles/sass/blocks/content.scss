@@ -1,0 +1,57 @@
+
+.pw-content {
+    position: relative;
+    background-color: $white;
+}
+
+.text-page .pw-content {
+    padding: 2em 0;
+}
+
+
+//Page contact
+
+.text-page_contact .pw-content {
+    padding: 6em 0 10em;
+}
+
+    .pw-contact-list-social {
+        padding: 0;
+        list-style: none;
+    }
+
+        .pw-contact-list-social > li {
+            margin-bottom: 1.3em;
+            text-indent: 1em;
+            line-height: 3em;
+        }
+
+        .pw-contact-list-social > li:last-child {
+            margin-bottom: 0;
+        }
+
+            .pw-contact-list > li > a {
+                @include font-size(14);
+                line-height: 1.4em;
+            }
+
+            .pw-contact-list-social > li > a,
+            .pw-contact-list-social > li > a:hover {
+                text-decoration: none;
+                color: $dark;
+            }
+
+            .pw-contact-list-social > li > a:hover {
+                color: $accent;
+            }
+
+        .pw-contact-list-social > li i,
+        .pw-contact-list-social > li span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .pw-contact-list-social > li span {
+            @include font-size(16);
+        }
+
