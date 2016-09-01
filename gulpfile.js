@@ -21,7 +21,7 @@
             ]
         },
         js: {
-            src : ['./gulpfile.js', './server.js']
+            src : ['./gulpfile.js', './server.js', './js/**/*.js']
         },
         html: {
             src  : [
