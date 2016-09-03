@@ -15,6 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "base": "^2.8.3"
+    "base": "^2.8.3",
+    "socket.io-client": "^1.4.8",
+    "velocity": "^1.2.3"
   }
 }
