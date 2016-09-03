@@ -3,7 +3,7 @@
 (function () {
 
     //TODO change this with read stream
-    var STREAM_URL = 'http://audio.scdn.arkena.com/11016/fip-midfi128.mp3';
+    var STREAM_URL = 'http://listen.radionomy.com/polytest';
 
     /**
      * handleClick
