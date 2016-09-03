@@ -1,52 +1,51 @@
-/*global io:true*/
+/*global Velocity,io:true*/
 'use strict';
 
 (function () {
+    const API_ROOT = 'http://polywave-api.d.wuips.com';
 
-    var bar = document.querySelector('.pw-controls-bar-position');
+    var
+        bar = document.querySelector('.pw-controls-bar-position'),
+        song_title = document.querySelector('.pw-controls-title'),
+        song_cover = document.querySelector('.pw-controls-thumb');
 
-    if (bar) {
+    if (bar && song_title && song_cover) {
 
         var resetBar = function (width) {
-            bar.style.transition = 'none';
-            bar.style['-webkit-transition'] = 'none';
-            bar.style.width = width + '%';
+            Velocity(bar, {width: width}, {duration: 0});
         };
 
         /**
          * @param  {Number} duration    in seconds
          */
-        var animate = function (duration) {
-            bar.style.transition = 'width ' + duration + 's linear';
-            bar.style['-webkit-transition'] = 'width ' + duration + 's linear';
-            bar.style.width = '100%';
+        var animateBar = function (duration) {
+            Velocity(bar, {width: '100%'}, {duration: duration});
         };
 
         var initBar = function (song) {
-
             //how far we are in this song
             var pastTime = Date.now() - (new Date(song.startTime)).getTime();
             var currentWidth = pastTime / song.playDuration * 100;
 
-            console.log('pastTime', pastTime / 1000);
-            console.log('currentWidth', currentWidth);
-            console.log('duration', song.playDuration - pastTime);
-
             resetBar(currentWidth);
             setTimeout(function () {
-                animate((song.playDuration - pastTime) / 1000);
+                animateBar(song.playDuration - pastTime);
             }, 300);
         };
 
         var handleNewSong = function (song) {
             console.log('Current song', song);
 
+            if (!song) {
+                return;
+            }
+
             initBar(song);
+            song_title.innerText = song.title + ' - ' + song.artists;
+            song_cover.src = song.cover;
         };
 
-        var socket = io('http://localhost:3002');
+        var socket = io(API_ROOT);
         socket.on('current', handleNewSong);
-
     }
-
 }());
