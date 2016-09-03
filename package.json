@@ -9,7 +9,7 @@
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "engines": {
-    "node": "5.9.x"
+    "node": "6.5.x"
   },
   "repository": {
     "type": "git",
