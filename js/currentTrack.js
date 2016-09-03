@@ -2,7 +2,7 @@
 'use strict';
 
 (function () {
-    const API_ROOT = 'http://polywave-api.d.wuips.com';
+    var API_ROOT = 'http://polywave-api.d.wuips.com';
 
     var
         bar = document.querySelector('.pw-controls-bar-position'),
