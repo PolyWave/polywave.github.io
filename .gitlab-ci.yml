@@ -16,8 +16,8 @@ cache:
   key: "dependencies"
 
 before_script:
-  - npm install &>/dev/null
-  - bower install &>/dev/null
+  - npm install
+  - bower install
 
 lint:
   script:
