@@ -25,7 +25,11 @@
         var initBar = function (song) {
             //how far we are in this song
             var pastTime = Date.now() - (new Date(song.startTime)).getTime();
+
             var currentWidth = pastTime / song.playDuration * 100;
+            if (currentWidth > 100) {
+                currentWidth = 100;
+            }
 
             resetBar(currentWidth);
             setTimeout(function () {

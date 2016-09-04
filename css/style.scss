@@ -1,35 +1,30 @@
+---
+---
 
 //---------------------
 //   Base framework
 //---------------------
 
-@import 'base/variables';
+@import "base/_variables";
 
-@import 'base/mixins';
-@import 'base/resets';
+@import "base/_mixins";
+@import "base/_resets";
 
-@import 'base/global';
-@import 'base/lists';
-@import 'base/blockquotes';
-@import 'base/tables';
-@import 'base/code';
-@import 'base/forms';
+@import "base/_typography";
+@import "base/_lists";
+@import "base/_blockquotes";
+@import "base/_tables";
+@import "base/_code";
+@import "base/_forms";
+@import "base/_buttons";
 
-@import 'base/assets';
+@import "base/_animations";;
 
-@import 'grid'; //use custom grid
-
-// Helpers
-@import 'base/helpers';
-
-@import 'mobile-styles';
-
-// Desktop Styles
-@media only screen and (min-width: $breakpoint-desktop) {
-    @import 'desktop-styles';
+@media print {
+  @import "base/_print";
 }
 
-@import 'base/animations';
+@import 'grid'; //use custom grid
 
 //-------------------
 //  Polywave styles
@@ -46,6 +41,7 @@ body {
     background-color: $dark;
     width: 100%;
     height: 100%;
+    font-size: 16px;
 }
 
 body {
@@ -67,5 +63,4 @@ img {
 @import 'blocks/header';
 @import 'blocks/content';
 @import 'blocks/footer';
-
 

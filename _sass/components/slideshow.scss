@@ -65,8 +65,8 @@ $nb-items: 5;      //number of items in slideshow
             }
 
             .pw-slideshow-item-overlay {
-                @include bg-rgba($dark, 30);
                 opacity: .3;
+                background-color: rgba(33, 33, 33, .3);
                 background-image: linear-gradient(
                         to bottom right,
                         rgb(0, 47, 75),

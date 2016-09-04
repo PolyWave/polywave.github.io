@@ -147,7 +147,7 @@ $i: 0;
 
 
 // Tablet Grid
-@media only screen and (min-width: $breakpoint-tablet) {
+@media only screen and (min-width: $breakpoint-m) {
 
     .row-end-tablet {
         @include prefixr(justify-content, flex-end);
@@ -241,7 +241,7 @@ $i: 0;
 }
 
 // Desktop Grid
-@media only screen and (min-width: $breakpoint-desktop) {
+@media only screen and (min-width: $breakpoint-l) {
 
     .row-end-desktop {
         @include prefixr(justify-content, flex-end);
@@ -340,7 +340,7 @@ $i: 0;
 }
 
 // HD Grid
-@media only screen and (min-width: $breakpoint-hd) {
+@media only screen and (min-width: $breakpoint-xl) {
 
     .row-end-hd {
         @include prefixr(justify-content, flex-end);
