@@ -29,7 +29,7 @@ pushToGithub:
     stage: deploy
     script:
       - echo git remote add github $GITHUB_PROJECT
-      - git remote add github $GITHUB_PROJECT
+      - (git remote | grep github) || git remote add github $GITHUB_PROJECT
       - echo git push github master
       - git push github master
 
