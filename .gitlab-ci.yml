@@ -27,6 +27,7 @@ pushToGithub:
       -  master
     stage: deploy
     script:
-      - (git remote | grep github) || git remote add github $GITHUB_PROJECT
+      - git remote remove github
+      - git remote add github $GITHUB_PROJECT
       - git push github master
 
