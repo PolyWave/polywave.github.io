@@ -7,6 +7,7 @@ variables:
 
 stages:
   - test
+  - deploy
 
 cache:
   untracked: true
@@ -21,3 +22,21 @@ lint:
   script:
     - gulp check
   stage: test
+
+pushToGithub:
+    only: master
+    stage: deploy
+    before_script:
+      # Add ssh private key $SSH_DEPLOY_KEY
+      - eval $(ssh-agent -s)
+      - echo "$GITHUB_DEPLOY_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+      - ssh-add #will load ~/.ssh/id_rsa
+      # SSH config
+      - mkdir -p ~/.ssh
+      - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+      # Add github to known hosts
+      - ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+    script:
+      - echo git add remote github $GITHUB_PROJECT
+      - git add remote github $GITHUB_PROJECT
+
