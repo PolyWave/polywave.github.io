@@ -24,7 +24,8 @@ lint:
   stage: test
 
 pushToGithub:
-    only: master
+    only:
+      -  master
     stage: deploy
     before_script:
       # Add ssh private key $SSH_DEPLOY_KEY
