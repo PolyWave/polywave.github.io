@@ -38,6 +38,8 @@ pushToGithub:
       # Add github to known hosts
       - ssh-keyscan -H github.com >> ~/.ssh/known_hosts
     script:
-      - echo git add remote github $GITHUB_PROJECT
-      - git add remote github $GITHUB_PROJECT
+      - echo git remote add github $GITHUB_PROJECT
+      - git remote add github $GITHUB_PROJECT
+      - echo git push github master
+      - git push github master
 
