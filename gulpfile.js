@@ -2,23 +2,17 @@
     'use strict';
 
     let gulp        = require('gulp'),
-        sass        = require('gulp-sass'),
         jshint      = require('gulp-jshint'),
         stylish     = require('jshint-stylish'),
-        sourcemaps  = require('gulp-sourcemaps'),
         scsslint    = require('gulp-scss-lint'),
-        htmlhint    = require('gulp-htmlhint'),
-        browserSync = require('browser-sync').create();
+        htmlhint    = require('gulp-htmlhint');
 
     let paths = {
         sass: {
-            src  : `./styles/sass/style.scss`,
-            watch: `./styles/sass/**/*.scss`,
-            dest : `./styles/css`,
-            includePaths: [
-                'lib/base/src/scss/', //include BASE framework
-                'styles/sass/'
-            ]
+            watch: [
+                `./_sass/**/*.scss`,
+                `!./_sass/base/**/*.scss`,
+            ],
         },
         js: {
             src : ['./gulpfile.js', './server.js', './js/**/*.js']
@@ -38,17 +32,6 @@
      * SASS
      */
 
-    gulp.task('sass', () => {
-        return gulp.src(paths.sass.src)
-            .pipe(sourcemaps.init())
-            .pipe(sass({
-                includePaths: paths.sass.includePaths
-            }).on('error', sass.logError))
-            .pipe(sourcemaps.write())
-            .pipe(gulp.dest(paths.sass.dest))
-            .pipe(browserSync.reload({ stream: true }));
-    });
-
     gulp.task('sass:lint', () => {
         let task = gulp.src(paths.sass.watch).pipe(scsslint({
             config: '.sass-lint.yml'
@@ -62,7 +45,7 @@
     });
 
     gulp.task('sass:watch', () => {
-        gulp.watch(paths.sass.watch, ['sass:lint', 'sass']);
+        gulp.watch(paths.sass.watch, ['sass:lint']);
     });
 
     /**
@@ -77,8 +60,6 @@
         if (process.env.CI) {
             task = task.pipe(htmlhint.failReporter({ suppress: true }));
         }
-
-        task.pipe(browserSync.reload({ stream: true }));
 
         return task;
     });
@@ -100,7 +81,6 @@
                 task = task.pipe(jshint.reporter('fail'));
             }
 
-            task.pipe(browserSync.reload({ stream: true }));
         return task;
     });
 
@@ -108,20 +88,9 @@
         gulp.watch(paths.js.src, ['js:lint']);
     });
 
-    gulp.task('browserSync',() => {
-        browserSync.init({
-            server: {
-                baseDir: './'
-            },
-            notify: false
-        });
-    });
-
     gulp.task('check', ['sass:lint', 'html:lint', 'js:lint']);
-    gulp.task('build', ['check', 'sass']);
-    gulp.task('build-heroku', ['html:lint', 'js:lint', 'sass']);
     gulp.task(
         'default',
-        ['build', 'browserSync', 'sass:watch', 'js:watch', 'html:watch']
+        ['check', 'sass:watch', 'js:watch', 'html:watch']
     );
 })();
