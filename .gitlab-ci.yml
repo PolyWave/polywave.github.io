@@ -27,18 +27,7 @@ pushToGithub:
     only:
       -  master
     stage: deploy
-    before_script:
-      # Add ssh private key $SSH_DEPLOY_KEY
-      - mkdir -p ~/.ssh
-      - eval $(ssh-agent -s)
-      - echo "$GITHUB_DEPLOY_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
-      - ssh-add #will load ~/.ssh/id_rsa
-      # SSH config
-      - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-      # Add github to known hosts
-      - ssh-keyscan -H github.com >> ~/.ssh/known_hosts
     script:
-      - ssh -T -p 443 git@ssh.github.com
       - echo git remote add github $GITHUB_PROJECT
       - git remote add github $GITHUB_PROJECT
       - echo git push github master
