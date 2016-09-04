@@ -16,7 +16,7 @@
             watch: `./styles/sass/**/*.scss`,
             dest : `./styles/css`,
             includePaths: [
-                'bower_components/base/src/scss/', //include BASE framework
+                'lib/base/src/scss/', //include BASE framework
                 'styles/sass/'
             ]
         },
