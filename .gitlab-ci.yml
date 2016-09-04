@@ -15,10 +15,9 @@ cache:
     - node_modules/
   key: "dependencies"
 
-before_script:
-  - npm install
-
 lint:
+  before_script:
+    - npm install
   script:
     - gulp check
   stage: test
@@ -28,8 +27,6 @@ pushToGithub:
       -  master
     stage: deploy
     script:
-      - echo git remote add github $GITHUB_PROJECT
       - (git remote | grep github) || git remote add github $GITHUB_PROJECT
-      - echo git push github master
       - git push github master
 
