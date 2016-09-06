@@ -19,10 +19,11 @@
         },
         html: {
             src  : [
-                './partials/**/*.html',
-                './index.html',
-                './text.html',
-                './contact.html'
+                './_includes/**/*.html',
+                './_layouts/**/*.html',
+                './*.html',
+                './*.html',
+                './*.html'
             ],
             index: './partials/index.html'
         }
@@ -54,7 +55,7 @@
 
     gulp.task('html:lint', () => {
         let task = gulp.src(paths.html.src)
-            .pipe(htmlhint())
+            .pipe(htmlhint('.htmlhintrc'))
             .pipe(htmlhint.reporter());
 
         if (process.env.CI) {
