@@ -1,0 +1,32 @@
+
+{% if include.headerTop %}
+{% assign topClass = 'pw-header_top' %}
+{% else %}
+{% assign topClass = '' %}
+{% endif %}
+
+<header class="pw-header {{ topClass }} container-full">
+    <div class="row row-align-center">
+        <div class="col-6 push-1-desktop max">
+            <a href="">
+                <div class="pw-logo">
+                    <object class="pw-logo-svg"
+                        data="images/logo_white.svg" type="image/svg+xml">
+                    </object>
+                    <h1 class="pw-logo-polywave">PolyWave</h1>
+                </div>
+            </a>
+        </div>
+        <div class="pw-header-links col-6 col-4-desktop max text-right">
+            <ul class="pw-header-nav">
+                <li class="pw-header-nav-item">
+                    <a href="actus.html">Actus</a>
+                </li>
+                <li class="pw-header-nav-item">
+                    <a href="programmes.html">Programmes</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+

@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html>
     <head>
@@ -17,30 +19,7 @@
 
     <body class="text-page text-page_header">
 
-        <header class="pw-header container-full">
-            <div class="row row-align-center">
-                <div class="col-6 push-1-desktop max">
-                    <a href="">
-                        <div class="pw-logo">
-                            <object class="pw-logo-svg"
-                                data="images/logo_white.svg" type="image/svg+xml">
-                            </object>
-                            <h1 class="pw-logo-polywave">PolyWave</h1>
-                        </div>
-                    </a>
-                </div>
-                <div class="pw-header-links col-6 col-4-desktop max text-right">
-                    <ul class="pw-header-nav">
-                        <li class="pw-header-nav-item">
-                            <a href="actus.html">Actus</a>
-                        </li>
-                        <li class="pw-header-nav-item">
-                            <a href="programmes.html">Programmes</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+        {% include header.html %}
 
         <div class="pw-content row row-align-center">
 
@@ -159,63 +138,7 @@
 
         </div>
 
-        <footer class="pw-footer">
-            <div class="container row row-align-center">
-
-                <div class="pw-footer-pw col-12 col-4-tablet">
-
-                    <div class="pw-footer-logos row row-align-center">
-                        <div class="pw-logo pw-logo_big">
-                            <object class="pw-logo-svg"
-                                data="images/logo_white.svg" type="image/svg+xml">
-                            </object>
-                            <h1 class="pw-logo-polywave">PolyWave</h1>
-                        </div>
-                        <div>
-                            <img class="pw-footer-logo-poly"
-                            src="images/polytech.png" alt="logo polytech">
-                        </div>
-                    </div>
-
-                    <p class="pw-footer-punchline">
-                        La radio étudiante de
-                        <a href="http://http://web.polytech.univ-nantes.fr/">
-                            Polytech Nantes
-                        </a>
-                    </p>
-                </div>
-                <div class="col-12 text-center col-3-tablet push-2-tablet
-                    text-left-tablet">
-                    <ul class="pw-footer-list">
-                        <li><a target="_blank" href="http://facebook.com">Actus</a></li>
-                        <li><a href="programmes.html">Programmes</a></li>
-                        <li><a href="contact.html">Nous contacter</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 text-center col-3-tablet text-left-tablet">
-                    <h3 class="pw-footer-follow">Nous suivre :</h3>
-                    <ul class="pw-footer-list pw-footer-list_social">
-                        <li>
-                            <a target="_blank" href="http://facebook.com">
-                                <i class="fa fa-3x fa-facebook-official"
-                                    aria-hidden="true">
-                                </i>
-                                <span>Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="http://twitter.com">
-                                <i class="fa fa-3x fa-twitter"
-                                    aria-hidden="true">
-                                </i>
-                                <span>Twitter</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </footer>
+        {% include footer.html %}
 
     </body>
 </html>
