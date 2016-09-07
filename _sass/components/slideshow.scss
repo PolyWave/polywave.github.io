@@ -34,7 +34,7 @@ $nb-items: 5;      //number of items in slideshow
 }
 
     .pw-slideshow-wrapper {
-        @include animation('tmp-slideshow-anim #{6 * $nb-items}s  ease-in-out infinite');
+//        @include animation('tmp-slideshow-anim #{6 * $nb-items}s  ease-in-out infinite');
         margin: 0;
         padding: 0;
         width: $nb-items * 100%;
