@@ -3,7 +3,7 @@
 (function () {
 
     //TODO change this with read stream
-    var STREAM_URL = 'http://listen.radionomy.com/polytest';
+    var STREAM_URL = 'http://listen.radionomy.com/polywaveradio';
 
     /**
      * handleClick
