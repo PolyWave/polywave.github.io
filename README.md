@@ -1,10 +1,9 @@
 PolyWave Website
 ===============
 
-*//todo*
-
 # Dependencies
 
+- [Jekyll](https://jekyllrb.com/)
 - Node
 - Bower (`npm install --global bower`)
 - Gulp (`npm install --global gulp-cli`)
@@ -13,9 +12,11 @@ PolyWave Website
 ## Installation
 
 ```
+jekyll new . --force
 npm install
 bower install
-gulp //go to http://localhost:3000
+gulp // lint the code
+bundle exec jekyll serve // serve site locally
 ```
 
 # CSS
