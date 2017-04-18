@@ -23,7 +23,7 @@
 				<h1><a href="{{podcast.url}}">{{podcast.title}}</a></h1>
 				<p>Diffusé le {{podcast.date | date:"%d/%m/%Y"}}</p>
 				<p>{{podcast.content}}</p>
-				<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?feed={{podcast.mixcloud}}%2F&hide_cover=1&hide_artwork=1&light=1" frameborder="0"></iframe>
+				<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?feed={{podcast.mixcloud}}&hide_cover=1&hide_artwork=1&light=1" frameborder="0"></iframe>
 			</div>
 		{% endfor %}
 			
