@@ -1,0 +1,35 @@
+---
+---
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>PolyWave - La radio de Polytech Nantes</title>
+
+        {% include styles.html %}
+
+    </head>
+
+    <body class="text-page text-page_contact">
+
+        {% include header.html %}
+
+        <div class="pw-content row row-align-center">
+
+		{% for podcast in site.podcasts reversed %}
+            <div class="">
+				<h1>{{podcast.title}}</h1>
+				<p>Diffusé le {{podcast.date}}</p>
+				<p>{{podcast.content}}</p>
+				<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?feed={{podcast.url}}%2F&hide_cover=1&hide_artwork=1&light=1" frameborder="0"></iframe>
+			</div>
+		{% endfor %}
+			
+        </div>
+
+        {% include footer.html %}
+
+    </body>
+</html>
