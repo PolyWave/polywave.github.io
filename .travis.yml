@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- 7.7.2
+env:
+- CI=true
+before_script:
+- npm install -g gulp
+script:
+- gulp check
