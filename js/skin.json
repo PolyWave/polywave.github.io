@@ -1,0 +1,431 @@
+{
+    "authorEmail": "",
+    "authorName": "",
+    "authorWebsite": "",
+    "bkgdColor": "transparent",
+    "created": 1492617806437,
+    "filename": "039.tsv",
+    "height": 76,
+    "images": {},
+    "layout": [
+        {
+            "align": "left",
+            "font": "Arial, Helvetica, sans-serif",
+            "h": 21,
+            "name": "cmp_info_title",
+            "stroke": {
+                "alpha": null,
+                "color": null,
+                "style": null,
+                "weight": 0
+            },
+            "text": "Title gets put here",
+            "textColor": {
+                "alpha": 1,
+                "color": "#000000"
+            },
+            "textFit": "wh",
+            "textScale": 0.71429,
+            "type": "TextBox",
+            "w": 81,
+            "x": 116,
+            "y": 6,
+            "z": 1
+        },
+        {
+            "align": "left",
+            "font": "Arial, Helvetica, sans-serif",
+            "h": 21,
+            "name": "cmp_info_artist",
+            "stroke": {
+                "alpha": null,
+                "color": null,
+                "style": null,
+                "weight": 0
+            },
+            "text": "Artist gets put here",
+            "textColor": {
+                "alpha": 1,
+                "color": "#000000"
+            },
+            "textFit": "wh",
+            "textScale": 0.71429,
+            "type": "TextBox",
+            "w": 81,
+            "x": 221,
+            "y": 9,
+            "z": 2
+        },
+        {
+            "align": "left",
+            "font": "Arial, Helvetica, sans-serif",
+            "h": 21,
+            "name": "cmp_info_album",
+            "stroke": {
+                "alpha": null,
+                "color": null,
+                "style": null,
+                "weight": 0
+            },
+            "text": "Album gets put here",
+            "textColor": {
+                "alpha": 1,
+                "color": "#000000"
+            },
+            "textFit": "wh",
+            "textScale": 0.71429,
+            "type": "TextBox",
+            "w": 81,
+            "x": 327,
+            "y": 9,
+            "z": 3
+        },
+        {
+            "fill": {
+                "alpha": 1,
+                "color": "#000000"
+            },
+            "h": 76,
+            "name": "cmp_cover",
+            "stroke": {
+                "alpha": null,
+                "color": null,
+                "style": null,
+                "weight": 0
+            },
+            "type": "Container",
+            "w": 98,
+            "x": 0,
+            "y": 0,
+            "z": 4
+        },
+        {
+            "align": "center",
+            "fill": [
+                {
+                    "alpha": 1,
+                    "color": "#000000"
+                },
+                {
+                    "alpha": 1,
+                    "color": "#000000"
+                }
+            ],
+            "font": "WimpyPlayerGlyphs",
+            "h": 32,
+            "name": "cmp_coverPlayPause",
+            "rounded": 9,
+            "stroke": [
+                {
+                    "alpha": 1,
+                    "color": "#ffffff",
+                    "weight": 3
+                },
+                {
+                    "alpha": 1,
+                    "color": "#ece8e8",
+                    "weight": 3
+                }
+            ],
+            "text": "p",
+            "textColor": [
+                {
+                    "alpha": 1,
+                    "color": "#ffffff"
+                },
+                {
+                    "alpha": 1,
+                    "color": "#b2aeae"
+                }
+            ],
+            "textFit": "wh",
+            "textScale": 0.5523,
+            "type": "Rube",
+            "w": 31,
+            "x": 34,
+            "y": 23,
+            "z": 5
+        },
+        {
+            "children": [
+                {
+                    "align": "center",
+                    "bevel": [
+                        {
+                            "a1": 1,
+                            "a2": 1,
+                            "c1": "#FFFFFF",
+                            "c2": "#000000",
+                            "s1": 0,
+                            "s2": 0,
+                            "x": 0.08,
+                            "y": 1.12
+                        },
+                        {
+                            "a1": 1,
+                            "a2": 1,
+                            "c1": "#FFFFFF",
+                            "c2": "#000000",
+                            "s1": 0,
+                            "s2": 0,
+                            "x": 0.8,
+                            "y": 1.12
+                        }
+                    ],
+                    "fill": [
+                        {
+                            "alpha": 1,
+                            "color": "#9E9B97"
+                        },
+                        {
+                            "alpha": 1,
+                            "color": "#9E9B97"
+                        }
+                    ],
+                    "font": "Arial, Helvetica, sans-serif",
+                    "h": 8,
+                    "name": "track",
+                    "rounded": 0.5,
+                    "stroke": [
+                        {
+                            "alpha": null,
+                            "color": null,
+                            "weight": 1
+                        },
+                        {
+                            "alpha": null,
+                            "color": null,
+                            "weight": 1
+                        }
+                    ],
+                    "text": "",
+                    "textFit": "wh",
+                    "textScale": 0.7,
+                    "type": "Rube",
+                    "w": 525,
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                },
+                {
+                    "h": 1,
+                    "name": "thumb",
+                    "type": "Rube",
+                    "w": 1
+                },
+                {
+                    "bevel": {
+                        "a1": 1,
+                        "a2": 1,
+                        "c1": "#FFFFFF",
+                        "c2": "#000000",
+                        "s1": 0,
+                        "s2": 0,
+                        "x": 0.08,
+                        "y": 1.28
+                    },
+                    "fill": {
+                        "alpha": 0.39456,
+                        "color": "#121212"
+                    },
+                    "h": 7,
+                    "name": "loader",
+                    "stroke": {
+                        "alpha": null,
+                        "color": null,
+                        "style": null,
+                        "weight": 0
+                    },
+                    "type": "ScrubberProgress",
+                    "w": 131.5,
+                    "x": 394.5,
+                    "y": 0,
+                    "z": 2
+                },
+                {
+                    "bevel": {
+                        "a1": 1,
+                        "a2": 1,
+                        "c1": "#FFFFFF",
+                        "c2": "#000000",
+                        "s1": 0,
+                        "s2": 0,
+                        "x": 0,
+                        "y": 0.88
+                    },
+                    "fill": {
+                        "alpha": 0.50917,
+                        "color": "#f0f0f0"
+                    },
+                    "h": 8,
+                    "name": "progress",
+                    "stroke": {
+                        "alpha": null,
+                        "color": null,
+                        "style": null,
+                        "weight": 0
+                    },
+                    "type": "ScrubberProgress",
+                    "w": 131.25,
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                }
+            ],
+            "h": 8,
+            "name": "cmp_scrubber",
+            "stroke": {
+                "alpha": null,
+                "color": null,
+                "style": null,
+                "weight": 0
+            },
+            "type": "Scrubber",
+            "w": 525,
+            "x": 114,
+            "y": 53,
+            "z": 6
+        },
+        {
+            "children": [
+                {
+                    "align": "center",
+                    "bevel": [
+                        -1,
+                        -1
+                    ],
+                    "fill": [
+                        {
+                            "alpha": 1,
+                            "color": "#9E9B97"
+                        },
+                        {
+                            "alpha": 1,
+                            "color": "#9E9B97"
+                        }
+                    ],
+                    "font": "Arial, Helvetica, sans-serif",
+                    "h": 8.8568,
+                    "name": "track",
+                    "rounded": 0.5,
+                    "text": "",
+                    "textFit": "wh",
+                    "textScale": 0.7,
+                    "type": "Rube",
+                    "w": 105.455,
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "align": "center",
+                    "fill": [
+                        {
+                            "alpha": 1,
+                            "color": "#f2f2f2"
+                        },
+                        {
+                            "alpha": 1,
+                            "color": "#d8d8d8"
+                        }
+                    ],
+                    "font": "Arial, Helvetica, sans-serif",
+                    "h": 10.589,
+                    "name": "thumb",
+                    "rounded": 0.5,
+                    "shadow": [
+                        {
+                            "a": 0.25702,
+                            "c": "#000000",
+                            "s": 0.83234,
+                            "x": 0.10805,
+                            "y": 0.37819
+                        },
+                        {
+                            "a": 0.25702,
+                            "c": "#000000",
+                            "s": 0.83234,
+                            "x": 0.10805,
+                            "y": 0.37819
+                        }
+                    ],
+                    "stroke": [
+                        {
+                            "alpha": 0.39456,
+                            "color": "#000000",
+                            "weight": 1
+                        },
+                        {
+                            "alpha": 0.39456,
+                            "color": "#000000",
+                            "weight": 1
+                        }
+                    ],
+                    "text": "",
+                    "textFit": "wh",
+                    "textScale": 0.7,
+                    "type": "Rube",
+                    "w": 27.459,
+                    "x": 0,
+                    "y": -0.8661,
+                    "z": 1
+                }
+            ],
+            "h": 8.8568,
+            "name": "cmp_volume",
+            "stroke": {
+                "alpha": null,
+                "color": null,
+                "style": null,
+                "weight": 0
+            },
+            "type": "Slider",
+            "w": 105.455,
+            "x": 674,
+            "y": 52,
+            "z": 7
+        },
+        {
+            "align": "center",
+            "font": "WimpyPlayerGlyphs",
+            "h": 19.92,
+            "name": "cmp_mute",
+            "stroke": [
+                {
+                    "alpha": null,
+                    "color": null,
+                    "weight": 1
+                },
+                {
+                    "alpha": null,
+                    "color": null,
+                    "weight": 1
+                }
+            ],
+            "text": "M",
+            "textColor": [
+                {
+                    "alpha": 1,
+                    "color": "#000000"
+                },
+                {
+                    "alpha": 1,
+                    "color": "#e20a0a"
+                }
+            ],
+            "textFit": "wh",
+            "textScale": 0.7,
+            "type": "Rube",
+            "w": 36.722,
+            "x": 707,
+            "y": 26,
+            "z": 8
+        }
+    ],
+    "thumbnail": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAJCAYAAADEiInQAAABo0lEQVRIS+1WsWrCUBQ9T4uIm4NuZnNSQadSurgICv6Bk+gf5ANER8XZRUfBD7AQiquTiCI4CjUOghJTsJrBmpQ8MDSNhWeTxZI7vpx77nvn3HfzCAANN8Z8Pr8xw4WzKkDsGJJMJjEej+H1ek31RFEEx3Gse3Bx3xSwZUixWESr1QLP82g2m/D7/TidTlgsFqjX68jn85hOp6jVakZJ/bumaWg0Gthut0ilUphMJggGgyiXywiHw9jtdvB4PAiFQkbearVCv9/HbDajuM1mg1wuR+tdYr1e330jWAzpdDoolUr0jLooqqpaOtjpkdVut6nIl5BlmRrEEpVKBdVqlQV6FxiLIbFYDJIkIRKJYDQaQRAEZLNZ02GcNuQulHJok7q+vV4PiUTiKqPFkGg0iv1+j3g8jsFg4BrikBGsNBZDut0uCoUCzSeE0Hn/M/7bDVEU5epoZhaREAQCARP8eDxiOBwaa5lMhonO1k/9XZaYivwGWr4t4fM92OJwIvnjcMD58/xnKr1xH5+eTfn6wyadThtrr8ILE78tQ5gquKCbFPgC+7qi9qaoprAAAAAASUVORK5CYII=",
+    "title": "039",
+    "version": "1.0",
+    "width": 779.455,
+    "x": 139,
+    "y": 266
+}
