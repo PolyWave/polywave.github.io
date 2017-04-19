@@ -1,7 +1,7 @@
 title: Polywave
 description:
 baseurl: ""
-url: "http://example.com"
+url: "http://polywave.github.io.com"
 
 incremental: true
 
@@ -15,3 +15,4 @@ collections:
   podcasts:
     output: true
     permalink: /podcasts/:title
+
