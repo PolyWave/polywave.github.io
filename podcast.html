@@ -1,5 +1,6 @@
 ---
 ---
+
 <!doctype html>
 <html>
     <head>
@@ -12,20 +13,46 @@
 
     </head>
 
-    <body class="text-page">
+    <body class="text-page text-page-podcast">
 
         {% include header.html %}
 
         <div class="pw-content row row-align-center">
 
-		{% for podcast in site.podcasts reversed %}
-            <div class="">
-				<h1><a href="{{podcast.url}}">{{podcast.title}}</a></h1>
-				<p>Diffusé le {{podcast.date | date:"%d/%m/%Y"}}</p>
-				<p>{{podcast.content}}</p>
-				<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?feed={{podcast.mixcloud}}&hide_cover=1&hide_artwork=1&light=1" frameborder="0"></iframe>
-			</div>
-		{% endfor %}
+            <div class="col-10 col-8-desktop push-1 push-2-desktop max
+                podcast-page-intro">
+                <h1>
+                    <i class="fa fa-podcast" aria-hidden="true"></i>
+                    Les derniers podcasts
+                </h1>
+                <h4>Vous n'avez pas pu écouter votre émission préférée ?
+                    <br />Retrouvez là ici ⬇️</h4>
+            </div>
+
+            <div class="col-10 push-1 max">
+            {% for podcast in site.podcasts reversed %}
+                <div class="row row-align-center podcast-item">
+                    <div class="col-12 col-5-tablet">
+                        <h3>
+                            <a href="{{podcast.url}}">{{podcast.title}}</a>
+                        </h3>
+                        <p>Diffusé le {{podcast.date | date:"%d/%m/%Y"}}</p>
+                        <p>{{podcast.description}}</p>
+                    </div>
+                    <div class="col-12 col-6-tablet  push-1-tablet">
+                        <iframe
+                            width="100%" height="120" frameborder="0"
+                            src="https://www.mixcloud.com/widget/iframe/?feed={{podcast.mixcloud}}&hide_cover=1&hide_artwork=1&light=1"
+                            >
+                        </iframe>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+
+            <div class="col-12 text-center podcast-page-end">
+                <p>That's all folks ! 👻</p>
+            </div>
 
         </div>
 

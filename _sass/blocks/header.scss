@@ -2,6 +2,7 @@
 
 $image1: 'https://source.unsplash.com/ERSauUNQ3ag/1600x900';
 $image2: 'https://source.unsplash.com/JiSNvVs3keU/1600x900';
+$image3: 'https://source.unsplash.com/c1ZN57GfDB0/1600x900';
 
 .pw-header {
     padding: 3em 1em 1em;
@@ -60,6 +61,26 @@ $image2: 'https://source.unsplash.com/JiSNvVs3keU/1600x900';
                         rgba(0, 0, 0, .3) 80%
                     ),
                     url($image2);
+    background-position: 0 20%;
+}
+
+.text-page-podcast .pw-header {
+    background-image: linear-gradient(
+                        to bottom right,
+                        rgba(0, 47, 75, .3),
+                        rgba(220, 66, 37, .3)
+                    ),
+                    linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0) 0%,
+                        rgba(0, 0, 0, .2) 100%
+                    ),
+                    linear-gradient(
+                        to bottom right,
+                        rgba(0, 0, 0, 0) 0%,
+                        rgba(0, 0, 0, .3) 80%
+                    ),
+                    url($image3);
     background-position: 0 20%;
 }
 
