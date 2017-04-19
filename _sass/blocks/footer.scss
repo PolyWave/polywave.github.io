@@ -38,32 +38,32 @@
                 line-height: 1.4em;
             }
 
-        .pw-footer-list_social > li {
+        .pw-footer-list-social > li {
             margin-bottom: 1.3em;
             text-indent: 1em;
             line-height: 3em;
         }
 
-            .pw-footer-list_social > li > a,
-            .pw-footer-list_social > li > a:hover {
+            .pw-footer-list-social > li > a,
+            .pw-footer-list-social > li > a:hover {
                 text-decoration: none;
             }
 
-            .pw-footer-list_social > li > a:hover {
+            .pw-footer-list-social > li > a:hover {
                 color: $white;
             }
 
-        .pw-footer-list_social > li:last-child {
+        .pw-footer-list-social > li:last-child {
             margin-bottom: 0;
         }
 
-        .pw-footer-list_social > li i,
-        .pw-footer-list_social > li span {
+        .pw-footer-list-social > li i,
+        .pw-footer-list-social > li span {
             display: inline-block;
             vertical-align: middle;
         }
 
-        .pw-footer-list_social > li span {
+        .pw-footer-list-social > li span {
             @include font-size(16);
         }
 

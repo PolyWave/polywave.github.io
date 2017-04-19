@@ -1,3 +1,4 @@
+// sass-lint:disable no-color-literals
 
 $nb-items: 5;      //number of items in slideshow
 
@@ -91,9 +92,6 @@ $nb-items: 5;      //number of items in slideshow
             z-index: 20;
             max-width: 40%;
             color: $white2;
-        }
-
-        ul.pw-slideshow-texts {
             padding: 0;
             list-style: none;
         }

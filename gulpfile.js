@@ -4,7 +4,7 @@
     let gulp        = require('gulp'),
         jshint      = require('gulp-jshint'),
         stylish     = require('jshint-stylish'),
-        scsslint    = require('gulp-scss-lint'),
+        sassLint    = require('gulp-sass-lint'),
         htmlhint    = require('gulp-htmlhint');
 
     let paths = {
@@ -34,12 +34,14 @@
      */
 
     gulp.task('sass:lint', () => {
-        let task = gulp.src(paths.sass.watch).pipe(scsslint({
-            config: '.sass-lint.yml'
-        }));
+        let task = gulp.src(paths.sass.watch)
+            .pipe(sassLint({
+                configFile: '.sass-lint.yml',
+            }))
+            .pipe(sassLint.format())
 
         if (process.env.CI) {
-            task = task.pipe(scsslint.failReporter());
+            task = task.pipe(sassLint.failOnError());
         }
 
         return task;

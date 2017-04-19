@@ -1,3 +1,4 @@
+// sass-lint:disable no-duplicate-properties
 
 $root-size: 14;
 
@@ -11,6 +12,6 @@ $root-size: 14;
 // scss-lint:enable DuplicateProperty
 
 * {
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-size: #{$root-size}px;
 }

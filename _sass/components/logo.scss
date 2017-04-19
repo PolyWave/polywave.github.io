@@ -10,11 +10,11 @@
         height: 90px;
     }
 
-    .pw-logo-svg.pw-logo-svg_footer {
+    .pw-logo-svg.pw-logo-svg-footer {
         margin-top: -28px;
     }
 
-    .pw-logo_big .pw-logo-svg {
+    .pw-logo-big .pw-logo-svg {
         width: 110px;
         height: 110px;
     }
@@ -32,10 +32,10 @@
     text-transform: uppercase;
     line-height: 2px;
     color: $white;
-    font-family: "Raleway", "Helvetica", "Arial", sans-serif;
+    font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
 }
 
-.pw-logo_big .pw-logo-polywave {
+.pw-logo-big .pw-logo-polywave {
     @include font-size(18);
     line-height: 4px;
 }
