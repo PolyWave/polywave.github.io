@@ -38,7 +38,7 @@
             .pipe(sassLint({
                 configFile: '.sass-lint.yml',
             }))
-            .pipe(sassLint.format())
+            .pipe(sassLint.format());
 
         if (process.env.CI) {
             task = task.pipe(sassLint.failOnError());
