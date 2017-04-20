@@ -14,8 +14,8 @@ PolyWave Website
 ```
 jekyll new . --force
 npm install
-gulp // lint the code
-bundle exec jekyll serve // serve site locally
+gulp # lint the code
+npm run dev # or bundle exec jekyll serve to  serve site locally
 ```
 
 # CSS
