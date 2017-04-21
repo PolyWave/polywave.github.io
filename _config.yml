@@ -1,18 +1,21 @@
+---
 title: Polywave
-description:
-baseurl: ""
-url: "http://polywave.github.io.com"
-
-incremental: true
-
-exclude:
-    - node_modules
-
-# Build settings
-markdown: kramdown
-
+timezone: UTC
 collections:
   podcasts:
+    title: Podcasts
     output: true
-    permalink: /podcasts/:title
-
+    permalink: "/podcasts/:title"
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+description: 
+baseurl: ''
+url: http://polywave.github.io.com
+incremental: true
+exclude:
+- node_modules
+markdown: kramdown
