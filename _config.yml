@@ -1,6 +1,6 @@
 ---
 title: Polywave
-timezone: UTC
+timezone: Europe/Paris
 collections:
   podcasts:
     title: Podcasts
@@ -13,7 +13,7 @@ collections:
     title: Uploads
     output: true
 description: 
-baseurl: ''
+baseurl: 
 url: http://polywave.github.io.com
 incremental: true
 exclude:
